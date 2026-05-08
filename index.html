@@ -1,417 +1,624 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Élégance Couture</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <style>
-body {
-    margin: 0;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    scroll-behavior: smooth;
+    background:#f5f5f5;
+    color:#222;
 }
 
-.hero {
-    background: url('images/logo.jpg') center/cover no-repeat;
-    height: 100vh;
-    position: relative;  important 
+/* =========================
+   HERO
+========================= */
+.hero{
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('images/logo.jpg') center/cover no-repeat;
+
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
 }
 
-
-.hero h1 {
-    position: absolute;
-    bottom: 120px; /* distance du bas */
-    left: 50%;
-    transform: translateX(-50%);
-    
-    color: white;
-    font-size: 60px;
-    background: rgba(0,0,0,0.6);
-    padding: 20px 40px;
-    border-radius: 10px;
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+    text-shadow:0 5px 15px rgba(0,0,0,0.5);
 }
 
-
-.hero-btn {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-} 
-
-
-.hero-btn a {
-    background: white;
-    color: black;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: 0.3s;
+.hero p{
+    font-size:20px;
+    max-width:700px;
+    margin-bottom:30px;
 }
 
-.hero-btn a:hover {
-    background: black;
-    color: white;
+.hero-btn a{
+    background:white;
+    color:black;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:40px;
+    font-weight:bold;
+    transition:0.3s;
+    display:inline-block;
 }
 
-/* NAVBAR */
-nav {
-    background: black;
-    padding: 15px;
-    text-align: center;
+.hero-btn a:hover{
+    background:black;
+    color:white;
+    transform:translateY(-3px);
 }
 
-nav a {
-    color: white;
-    margin: 15px;
-    text-decoration: none;
-    font-weight: bold;
+/* =========================
+   NAVBAR
+========================= */
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:black;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
 }
 
-/* SECTION */
-.section {
-    padding: 50px 20px;
-    text-align: center;
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
 }
 
-/* GRILLE */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
+.nav-links{
+    display:flex;
+    gap:20px;
 }
 
-.card {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
 }
 
-.card img {
-    width: 100%;
-    height: 650px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.5s;
+nav a:hover{
+    color:#d4af37;
+}
+
+/* =========================
+   PANIER
+========================= */
+.cart{
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+}
+
+#panier{
+    display:none;
+    background:white;
+    padding:25px;
+    margin:20px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+#liste-panier li{
+    margin-bottom:10px;
+}
+
+/* =========================
+   SECTION
+========================= */
+.section{
+    padding:80px 30px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    color:black;
+}
+
+/* =========================
+   SERVICES
+========================= */
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:25px;
+}
+
+.service-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+}
+
+.service-card h3{
+    margin-bottom:15px;
+    color:#111;
+}
+
+/* =========================
+   COLLECTION
+========================= */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    transition:0.5s;
 }
 
 .card:hover img{
-    transition: scale(1.1);
-    
+    transform:scale(1.05);
 }
 
-/* BOUTON */
-.btn {
-    background: black;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 20px;
+.card-content{
+    padding:20px;
+    text-align:center;
 }
 
-/* FOOTER */
-footer {
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.price{
+    font-size:22px;
+    font-weight:bold;
+    margin:15px 0;
 }
 
-.card-items{
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
+/* =========================
+   BUTTON
+========================= */
+.btn{
+    background:black;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
 }
-.card-items button{
-    background: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
+
+.btn:hover{
+    background:#d4af37;
+    color:black;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    max-width:900px;
+    margin:auto;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.socials{
+    margin-top:20px;
+}
+
+.socials a{
+    display:inline-block;
+    margin:10px;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .card img{
+        height:320px;
+    }
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <h1></h1>
 
-    <!-- BOUTON VOIR PRODUITS -->
-    <div class="hero-btn">
-        <a href="#collection">Voir nos produits ↓</a>
-    </div>
-</div>
+    <!-- =========================
+     NAVBAR
+========================= -->
+<nav>
 
-<!-- MENU -->
- <nav style="display:flex; justify-content:space-between; align-items:center; padding:15px; background:black; color:white;">
-
-    <div>
-        <a href="#" style="color:white; margin:10px;">Accueil</a>
-        <a href="#services" style="color:white; margin:10px;">Services</a>
-        <a href="#collection" style="color:white; margin:10px;">Collection</a>
-        <a href="#contact" style="color:white; margin:10px;">Contact</a>
+    <div class="logo">
+        Élégance Couture
     </div>
 
-    <!-- ICONE PANIER -->
-    <div onclick="togglePanier()" style="cursor:pointer;">
+    <div class="nav-links">
+        <a href="#">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#collection">Collection</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="cart" onclick="togglePanier()">
         🛒 <span id="count">0</span>
-
-        <button onclick="payerWave()" class="btn">
-    💰 Payer avec Wave
-</button>
     </div>
 
 </nav>
 
-<!-- SERVICES -->
-<div id="panier" style="padding:20px; background:#fff;">
-    <h2>🛒 Panier</h2>
+<!-- =========================
+     HERO
+========================= -->
+<header class="hero">
+
+    <h1>Élégance Couture</h1>
+
+    <p>
+        Des vêtements modernes, élégants et sur mesure pour révéler votre style.
+    </p>
+
+    <div class="hero-btn">
+        <a href="#collection">Voir nos produits ↓</a>
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     PANIER
+========================= -->
+<div id="panier">
+
+    <h2>🛒 Votre Panier</h2>
+
     <ul id="liste-panier"></ul>
-    <p>Total : <span onclick="togglePanier()">0</span> FCFA</p>
+
+    <h3 style="margin-top:20px;">
+        Total : <span id="total">0</span> FCFA
+    </h3>
+
+    <br>
+
+    <button class="btn" onclick="payerWave()">
+        💰 Payer avec Wave
+    </button>
+
 </div>
 
-<div id="cart-items"></div>
+<!-- =========================
+     SERVICES
+========================= -->
+<section class="section" id="services">
 
-<div class="cart-total">
-    <h3>Total : <span id="cart-total">0</span>FCFA</h3>
+    <h2 class="section-title">Nos Services</h2>
 
-    <button class="btn-wave" ></button>
-</div>
+    <div class="services-grid">
 
-
-<div class="section" id="services">
-    <h2>Nos Services</h2>
-    <div class="grid">
-        <div class="card">
+        <div class="service-card">
             <h3>Costume sur mesure</h3>
-            <p>Des créations uniques adaptées à votre style.</p>
+            <p>
+                Des créations uniques adaptées à votre style et votre personnalité.
+            </p>
         </div>
 
-        <div class="card">
+        <div class="service-card">
             <h3>Retouches professionnelles</h3>
-            <p>Un ajustement parfait pour tous vos vêtements.</p>
+            <p>
+                Un ajustement parfait pour tous vos vêtements.
+            </p>
         </div>
-    </div>
-</div>
 
-<!-- COLLECTION -->
-<div class="section" id="collection">
-    <h2>Notre Collection</h2>
+    </div>
+
+</section>
+
+<!-- =========================
+     COLLECTION
+========================= -->
+<section class="section" id="collection">
+
+    <h2 class="section-title">Notre Collection</h2>
+
     <div class="grid">
-        <div class="card">
-            <img src="images/jpg1.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn" onclick="ajouterPanier( 'costume', 50000)">Ajouter au panier</button>
-        </div>  
 
+        <!-- PRODUIT 1 -->
         <div class="card">
-            <img src="images/jpg2.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
+            <img src="images/jpg1.jpg" alt="Costume 1">
 
-        <div class="card">
-            <img src="images/jpg3.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
+            <div class="card-content">
+                <h3>Costume Élégant</h3>
+                <p class="price">25 000 FCFA</p>
+
+                <button class="btn"
+                    onclick="ajouterPanier('Costume Élégant', 25000)">
+                    Ajouter au panier
+                </button>
+            </div>
         </div>
 
+        <!-- PRODUIT 2 -->
         <div class="card">
-            <img src="images/jpg4.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
+            <img src="images/jpg2.jpg" alt="Costume 2">
+
+            <div class="card-content">
+                <h3>Costume Premium</h3>
+                <p class="price">25 000 FCFA</p>
+
+                <button class="btn"
+                    onclick="ajouterPanier('Costume Premium', 25000)">
+                    Ajouter au panier
+                </button>
+            </div>
         </div>
 
+        <!-- PRODUIT 3 -->
         <div class="card">
-            <img src="images/jpg5.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
+            <img src="images/jpg3.jpg" alt="Costume 3">
+
+            <div class="card-content">
+                <h3>Style Moderne</h3>
+                <p class="price">25 000 FCFA</p>
+
+                <button class="btn"
+                    onclick="ajouterPanier('Style Moderne', 25000)">
+                    Ajouter au panier
+                </button>
+            </div>
         </div>
 
+        <!-- PRODUIT 4 -->
         <div class="card">
-            <img src="images/jpg6.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
+            <img src="images/jpg4.jpg" alt="Costume 4">
+
+            <div class="card-content">
+                <h3>Collection Luxe</h3>
+                <p class="price">30 000 FCFA</p>
+
+                <button class="btn"
+                    onclick="ajouterPanier('Collection Luxe', 30000)">
+                    Ajouter au panier
+                </button>
+            </div>
         </div>
 
+        <!-- PRODUIT 5 -->
         <div class="card">
-            <img src="images/jpg7.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
+            <img src="images/jpg5.jpg" alt="Costume 5">
+
+            <div class="card-content">
+                <h3>Costume Chic</h3>
+                <p class="price">30 000 FCFA</p>
+
+                <button class="btn"
+                    onclick="ajouterPanier('Costume Chic', 30000)">
+                    Ajouter au panier
+                </button>
+            </div>
         </div>
 
+        <!-- PRODUIT 6 -->
         <div class="card">
-            <img src="images/jpg8.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
+            <img src="images/jpg6.jpg" alt="Costume 6">
 
-        <div class="card">
-            <img src="jpg9.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
+            <div class="card-content">
+                <h3>Fashion Dakar</h3>
+                <p class="price">30 000 FCFA</p>
 
-        <div class="card">
-            <img src="jpg10.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg11.jpg">
-            <p>25000 FCFA</p> 
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg12.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg13.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg14.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg15.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg16.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg17.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg18.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-        
-       <div class="card">
-            <img src="jpg19.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg20.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-        
-        <div class="card">
-            <img src="jpg21.jpg">
-            <p>25000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg22.jpg">
-            <p>25000 FCFA</p> 
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg23.jpg">
-            <p>30000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg24.jpg">
-            <p>30000 FCFA</p> 
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg25.jpg">
-            <p>30000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg26.jpg">
-            <p>30000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
-        </div>
-
-        <div class="card">
-            <img src="jpg27.jpg">
-            <p>30000 FCFA</p>
-            <button class="btn">Ajouter au panier</button>
+                <button class="btn"
+                    onclick="ajouterPanier('Fashion Dakar', 30000)">
+                    Ajouter au panier
+                </button>
+            </div>
         </div>
 
     </div>
-</div>
 
-<!-- CONTACT -->
-<div class="section" id="contact">
-    <h2>Contact</h2>
+</section>
 
+<!-- =========================
+     CONTACT
+========================= -->
+<section class="section" id="contact">
 
-    <p>📍 Adresse : Dakar, Sénégal</p>
-    <p>📞 Téléphone : +221 77 187 55 41 </p>
+    <h2 class="section-title">Contact</h2>
 
-    <!-- CARTE -->
-    <iframe 
-        src="https://www.google.com/maps?q=Dakar&output=embed"
-        width="100%" 
-        height="300" 
-        style="border:0; border-radius:10px; margin-top:20px;">
-    </iframe>
+    <div class="contact-box">
 
-    <p style="margin-top:20px;">Commandez directement via WhatsApp</p>
+        <p><strong>📍 Adresse :</strong> Dakar, Sénégal</p>
 
-    <a href="https://wa.me/221771875541">
-        <button class="btn">Commander sur WhatsApp</button>
-    </a>
+        <br>
 
-    <h3>Suivez-nous</h3>
+        <p><strong>📞 Téléphone :</strong> +221 77 187 55 41</p>
 
-<div style="margin-top: 15px;">
-    <a href="https://snapchat.com/t/LG5y7Bfc" target="_blank">👻 Snapchat</a>
-    <br><br>
-    <a href="https://www.tiktok.com/@kabacollection?_r=1&_t=ZS-966q5Skk2K4" targe="_blank">🎵 TikTok</a>
-    <br><br>
-    <a href="https://www.google.com/" target="_blank">Google</a>
-</div>
-</div>
+        <br>
 
-<!-- FOOTER -->
+        <iframe
+            src="https://www.google.com/maps?q=Dakar&output=embed"
+            width="100%"
+            height="300"
+            style="border:0; border-radius:15px;">
+        </iframe>
+
+        <br><br>
+
+        <a href="https://wa.me/221771875541" target="_blank">
+            <button class="btn">
+                Commander sur WhatsApp
+            </button>
+        </a>
+
+        <div class="socials">
+
+            <h3>Suivez-nous</h3>
+
+            <br>
+
+            <a href="https://snapchat.com/t/LG5y7Bfc" target="_blank">
+                👻 Snapchat
+            </a>
+
+            <a href="https://www.tiktok.com/@kabacollection?_r=1&_t=ZS-966q5Skk2K4"
+               target="_blank">
+                🎵 TikTok
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
 <footer>
-    <p>© 2026 Élégance Couture</p>
+    <p>© 2026 Élégance Couture — Tous droits réservés.</p>
 </footer>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+<script>
+
+let panier = [];
+let total = 0;
+
+function ajouterPanier(nom, prix){
+
+    panier.push({nom, prix});
+
+    total += prix;
+
+    document.getElementById("count").innerText = panier.length;
+
+    afficherPanier();
+}
+
+function afficherPanier(){
+
+    const liste = document.getElementById("liste-panier");
+
+    liste.innerHTML = "";
+
+    panier.forEach((article) => {
+
+        let li = document.createElement("li");
+
+        li.innerHTML = `
+            ${article.nom} - ${article.prix} FCFA
+        `;
+
+        liste.appendChild(li);
+    });
+
+    document.getElementById("total").innerText = total;
+}
+
+function togglePanier(){
+
+    const panierDiv = document.getElementById("panier");
+
+    if(panierDiv.style.display === "block"){
+        panierDiv.style.display = "none";
+    }else{
+        panierDiv.style.display = "block";
+    }
+}
+
+function payerWave(){
+
+    if(total === 0){
+
+        alert("Votre panier est vide.");
+
+        return;
+    }
+
+    alert("Paiement Wave bientôt disponible !");
+}
+
+</script>
 
 </body>
 </html>
