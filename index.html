@@ -1005,8 +1005,6 @@ footer{
 ========================= -->
 <script>
 
-<script>
-
 const products =
 document.querySelectorAll(".card");
 
@@ -1062,23 +1060,8 @@ showPage(currentPage);
 
 }
 
-showPage(currentPage);
+showPage(currentPage);    
 
-</script>    
-
-let panier = [];
-let total = 0;
-
-function ajouterPanier(nom, prix){
-
-    panier.push({nom, prix});
-
-    total += prix;
-
-    document.getElementById("count").innerText = panier.length;
-
-    afficherPanier();
-}
 
 function afficherPanier(){
 
