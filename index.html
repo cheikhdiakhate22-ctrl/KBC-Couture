@@ -578,21 +578,6 @@ footer{
                 </button>
             </div>
         </div>
-
-        </div> <!-- fin des produits -->
-
-<!-- 👇 ICI -->
-        <div class="pagination">
-
-    <button onclick="prevPage()">
-        ⬅️ Précédent
-    </button>
-
-    <button onclick="nextPage()">
-        Suivant ➡️
-    </button>
-
-        </div>
         
         <div class="card">
             <img src="images/jpg10.jpg" alt="Costume 6">
@@ -1019,6 +1004,67 @@ footer{
      JAVASCRIPT
 ========================= -->
 <script>
+
+<script>
+
+const products =
+document.querySelectorAll(".card");
+
+let currentPage = 1;
+
+const productsPerPage = 10;
+
+function showPage(page){
+
+let start =
+(page - 1) * productsPerPage;
+
+let end =
+start + productsPerPage;
+
+products.forEach((product,index)=>{
+
+if(index >= start && index < end){
+
+product.style.display = "block";
+
+}else{
+
+product.style.display = "none";
+}
+
+});
+
+}
+
+function nextPage(){
+
+if(currentPage * productsPerPage
+< products.length){
+
+currentPage++;
+
+showPage(currentPage);
+
+}
+
+}
+
+function prevPage(){
+
+if(currentPage > 1){
+
+currentPage--;
+
+showPage(currentPage);
+
+}
+
+}
+
+showPage(currentPage);
+
+</script>    
 
 let panier = [];
 let total = 0;
