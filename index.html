@@ -278,6 +278,92 @@
         height: 300px;
              }
         }
+
+        .bottom-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:white;
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+
+    padding:15px 0;
+
+    box-shadow:0 -5px 15px rgba(0,0,0,0.1);
+
+    z-index:9999;
+}
+
+.bottom-item{
+    text-align:center;
+    font-size:30px;
+    cursor:pointer;
+    color:#555;
+}
+
+.bottom-item p{
+    font-size:16px;
+    margin-top:5px;
+}
+
+/* SECTION PAIEMENT */
+.paiement-section{
+    background: #111;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.paiement-section h2{
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.paiement-container{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.paiement-card{
+    background: #1c1c1c;
+    width: 180px;
+    padding: 25px;
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.paiement-card:hover{
+    transform: translateY(-10px);
+}
+
+.paiement-card img{
+    width: 90px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.paiement-card p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.payer-btn{
+    background: #d4af37;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
              
     </style>
 </head>
@@ -723,6 +809,50 @@
 
     </section>
 
+    <!-- Moyens de paiement -->
+<section class="paiement-section">
+    <h2>Paiement Mobile</h2>
+
+    <div class="paiement-container">
+
+        <div class="paiement-card">
+            <img src="images/Logo.jpg1.jpg" alt="Logo">
+            <p></p>
+            <a href="tel:#144#"
+               class="payer-btn">
+                 Payer maintenant
+             </a>
+            
+            
+        </div>
+
+        <div class="paiement-card">
+            <img src="images/Logo.jpg2.jpg" alt="Logo">
+            <p></p>
+             <a href="tel:#144#39*771875541"
+               class="payer-btn">
+                 Payer maintenant
+             </a>
+        </div>
+
+        <div class="paiement-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+            <p>Visa</p>
+        </div>
+
+        <div class="paiement-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard">
+            <p>MasterCard</p>
+        </div>
+
+        <div class="paiement-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/PayPal_logo.svg" alt="PayPal">
+            <p>PayPal</p>
+        </div>
+
+    </div>
+</section>
+
     <section class="services-dark">
         <div class="service-item">
             <div class="service-icon">🚀</div>
@@ -791,61 +921,23 @@
     setInterval(startHeroSlider, 3000);
 
     
-      let cart = [];
 
-     // Fonction pour ajouter au panier
-     function addToCart(name, price) {
-      cart.push({ name: name, price: parseInt(price.replace(/\s/g, '')) });
-      updateCartUI();
-      $alert(name + " ajouté au panier !");
-     }
+function openMenu(){
 
-         // Mettre à jour l'affichage
-     function updateCartUI() {
-     const cartItems = document.getElementById('cart-items');
-     const cartCount = document.getElementById('count'); // Ton petit chiffre orange
-     const cartTotal = document.getElementById('cart-total');
-    
-     cartItems.innerHTML = '';
-     let total = 0;
+    alert("Menu bientôt disponible");
 
-     cart.forEach((item, index) => {
-        total += item.price;
-        cartItems.innerHTML += `<div style="display:flex; justify-content:space-between; margin-bottom:10px;">
-            <span>${item.name}</span>
-            <span>${item.price} F</span>
-        </div>`;
-      });
-
-         cartCount.innerText = cart.length;
-         cartTotal.innerText = total.toLocaleString();
-     }
-
-         // Ouvrir/Fermer le panier
-     function toggleCart() {
-     const modal = document.getElementById('cart-modal');
-     const overlay = document.getElementById('cart-overlay');
-     const isVisible = modal.style.display === 'block';
-    
-    modal.style.display = isVisible ? 'none' : 'block';
-    overlay.style.display = isVisible ? 'none' : 'block';
 }
 
-          // Envoyer la commande sur WhatsApp
-     function sendWhatsApp() {
-     if (cart.length === 0) return alert("Votre panier est vide");
-    
-     let message = "Bonjour Kaba Couture, je souhaite commander :\n\n";
-     cart.forEach(item => {
-        message += `- ${item.name} (${item.price} Fcfa)\n`;
-     });
-     message += `\nTotal : ${document.getElementById('cart-total').innerText} Fcfa`;
-    
-      const encodedMessage = encodeURIComponent(message);
-       window.open(`https://wa.me/221771875541?text=${encodedMessage}`, '_blank');
-     }
+function openCompte(){
+
+    alert("Page compte bientôt disponible");
+
+}
+
 
 </script>
+
+// =========================================
 <div id="cart-modal" style="display:none; position:fixed; top:0; right:0; width:320px; height:100%; background:white; z-index:9999; box-shadow:-5px 0 15px rgba(0,0,0,0.3); padding:25px; transition: 0.3s;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
         <h3 style="margin:0;">Votre Panier</h3>
@@ -867,6 +959,8 @@
 </div>
 
 <div id="cart-overlay" onclick="toggleCart()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:9998;"></div>
+
+
 
 </body>
 </html>
