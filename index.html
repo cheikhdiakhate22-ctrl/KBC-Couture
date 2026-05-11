@@ -1,760 +1,383 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kaba Couture | 6POINT9 Style</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-orange: #f26522;
+            --dark-bg: #1e2129;
+            --text-grey: #444;
+            --light-grey: #f4f4f4;
+            --dhl-red: #b3211b;
+        }
 
-<title>KABA COUTURE</title>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-<style>
+        body {
+            background-color: white;
+            color: var(--text-grey);
+            padding-bottom: 70px; /* Espace pour la nav basse */
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-font-family:Arial,sans-serif;
-}
+        /* BANDEAU DHL */
+        .dhl-bar {
+            background: var(--dhl-red);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
 
-body{
-background:#f3f3f3;
-color:#111;
-}
+        /* HEADER */
+        header {
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-/* NAVBAR */
+        .logo {
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: black;
+        }
 
-nav{
-position:sticky;
-top:0;
-z-index:1000;
-background:black;
-padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+        }
 
-.logo{
-color:white;
-font-size:32px;
-font-weight:bold;
-}
+        /* BANNIÈRE PROMO */
+        .hero {
+            background-color: #fdfaf4;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-bottom: 1px solid #eee;
+        }
 
-.nav-links{
-display:flex;
-gap:25px;
-}
+        .hero h1 {
+            font-size: 35px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
 
-.nav-links a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
+        .hero p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+            max-width: 80%;
+        }
 
-.nav-links a:hover{
-color:#d4af37;
-}
+        .btn-discover {
+            background: black;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
 
-.cart{
-color:white;
-font-size:22px;
-cursor:pointer;
-}
+        /* SECTION TITRE */
+        .section-title {
+            padding: 30px 20px 10px;
+            text-align: left;
+        }
 
-/* HERO */
+        .section-title h2 {
+            font-size: 20px;
+            font-weight: 600;
+        }
 
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-url('images/logo.jpg');
+        .section-title p {
+            font-size: 13px;
+            color: #999;
+        }
 
-background-size:cover;
-background-position:center;
+        /* GRILLE DE PRODUITS (2 COLONNES) */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 15px;
+        }
 
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-padding:20px;
-}
+        .product-card {
+            background: white;
+            text-decoration: none;
+            color: inherit;
+        }
 
-.hero-content h1{
-font-size:90px;
-margin-bottom:20px;
-}
+        .product-card img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            background-color: var(--light-grey);
+            border-radius: 2px;
+        }
 
-.hero-content p{
-font-size:25px;
-margin-bottom:35px;
-}
+        .product-info {
+            padding: 10px 0;
+        }
 
-.hero-btn{
-display:inline-block;
-padding:16px 35px;
-background:white;
-color:black;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
+        .product-info h3 {
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-.hero-btn:hover{
-background:#d4af37;
-color:white;
-}
+        .product-price {
+            color: var(--primary-orange);
+            font-weight: 700;
+            font-size: 15px;
+        }
 
-/* SECTION */
+        /* SECTION SERVICES (NOIR) */
+        .services-dark {
+            background: var(--dark-bg);
+            color: white;
+            padding: 50px 20px;
+            margin-top: 30px;
+        }
 
-.section-title{
-text-align:center;
-font-size:45px;
-margin:60px 0 30px;
-}
+        .service-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
 
-/* GRID */
+        .service-icon {
+            font-size: 30px;
+            width: 50px;
+        }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:30px;
-padding:40px;
-}
+        .service-text h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
 
-/* CARD */
+        .service-text p {
+            font-size: 12px;
+            color: #aaa;
+        }
 
-.card{
-background:white;
-border-radius:25px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-transition:0.4s;
-}
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #25d366;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 999;
+            text-decoration: none;
+        }
 
-.card:hover{
-transform:translateY(-10px);
-}
+        /* NAVIGATION BASSE (STYLE APP) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 1px solid #eee;
+            z-index: 1000;
+        }
 
-.card img{
-width:100%;
-height:700px;
-object-fit:cover;
-}
+        .nav-link {
+            text-align: center;
+            text-decoration: none;
+            color: #888;
+            font-size: 10px;
+        }
 
-.card-content{
-padding:25px;
-text-align:center;
-}
+        .nav-link span {
+            display: block;
+            font-size: 22px;
+            margin-bottom: 2px;
+        }
 
-.card-content h3{
-font-size:32px;
-margin-bottom:15px;
-}
+        .nav-link.active {
+            color: black;
+        }
 
-.price{
-font-size:28px;
-font-weight:bold;
-color:#d4af37;
-margin-bottom:20px;
-}
-
-/* BUTTON */
-
-.btn{
-border:none;
-padding:14px 25px;
-border-radius:50px;
-font-weight:bold;
-cursor:pointer;
-margin:5px;
-transition:0.3s;
-}
-
-.btn-view{
-background:#eee;
-}
-
-.btn-cart{
-background:black;
-color:white;
-}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* PANIER */
-
-#panier{
-position:fixed;
-right:20px;
-top:90px;
-background:white;
-width:320px;
-padding:20px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
-display:none;
-z-index:2000;
-}
-
-#liste-panier li{
-margin:10px 0;
-}
-
-#waveBtn{
-width:100%;
-padding:15px;
-border:none;
-border-radius:15px;
-background:#00bfff;
-color:white;
-font-size:18px;
-margin-top:20px;
-cursor:pointer;
-}
-
-/* PAGINATION */
-
-.pagination{
-text-align:center;
-margin:40px;
-}
-
-.pagination button{
-padding:15px 30px;
-border:none;
-border-radius:40px;
-background:black;
-color:white;
-cursor:pointer;
-margin:10px;
-font-size:18px;
-}
-
-/* CONTACT */
-
-.contact-box{
-background:white;
-margin:40px;
-padding:40px;
-border-radius:25px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-.contact-box p{
-font-size:20px;
-margin-bottom:20px;
-}
-
-.socials{
-margin-top:20px;
-}
-
-.socials a{
-display:inline-block;
-margin:10px;
-text-decoration:none;
-font-weight:bold;
-color:black;
-}
-
-/* FOOTER */
-
-footer{
-background:black;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:50px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.card img{
-height:500px;
-}
-
-.hero-content h1{
-font-size:50px;
-}
-
-.hero-content p{
-font-size:18px;
-}
-
-nav{
-flex-direction:column;
-gap:15px;
-}
-
-}
-
-</style>
-
+        /* RESPONSIVE TABLETTE/PC */
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 1200px;
+                margin: auto;
+            }
+            .hero {
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-
-<nav>
-
-<div class="logo">
-KABA COUTURE
-</div>
-
-<div class="nav-links">
-
-<a href="#">Accueil</a>
-
-<a href="#collection">
-Collection
-</a>
-
-<a href="#contact">
-Contact
-</a>
-
-</div>
-
-<div class="cart"
-onclick="togglePanier()">
-
-🛒 <span id="count">0</span>
-
-</div>
-
-</nav>
-
-<!-- HERO -->
-
-<header class="hero">
-
-<div class="hero-content">
-
-<h1>KABA COUTURE</h1>
-
-<p>
-Les meilleures tenues africaines modernes et élégantes
-</p>
-
-<a href="#collection"
-class="hero-btn">
-
-Voir nos produits ↓
-
-</a>
-
-</div>
-
-</header>
-
-<!-- PANIER -->
-
-<div id="panier">
-
-<h2>🛒 Mon Panier</h2>
-
-<ul id="liste-panier"></ul>
-
-<h3>
-Total :
-<span id="total">0</span>
-FCFA
-</h3>
-
-<button id="waveBtn"
-onclick="payerWave()">
-
-💳 Payer avec Wave
-
-</button>
-
-</div>
-
-<!-- COLLECTION -->
-
-<section id="collection">
-
-<h2 class="section-title">
-Notre Collection
-</h2>
-
-<div class="grid">
-
-<!-- PRODUIT 1 -->
-
-<div class="card">
-
-<img src="images/jpg1.jpg">
-
-<div class="card-content">
-
-<h3>Fashion Dakar</h3>
-
-<p class="price">
-25 000 FCFA
-</p>
-
-<button class="btn btn-view"
-onclick="window.open('images/jpg1.jpg')">
-
-👁️ Voir
-
-</button>
-
-<button class="btn btn-cart"
-onclick="ajouterPanier('Fashion Dakar',25000)">
-
-🛒 Ajouter
-
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUIT 2 -->
-
-<div class="card">
-
-<img src="images/jpg2.jpg">
-
-<div class="card-content">
-
-<h3>Collection Luxe</h3>
-
-<p class="price">
-30 000 FCFA
-</p>
-
-<button class="btn btn-view"
-onclick="window.open('images/jpg2.jpg')">
-
-👁️ Voir
-
-</button>
-
-<button class="btn btn-cart"
-onclick="ajouterPanier('Collection Luxe',30000)">
-
-🛒 Ajouter
-
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUIT 3 -->
-
-<div class="card">
-
-<img src="images/jpg3.jpg">
-
-<div class="card-content">
-
-<h3>Costume Chic</h3>
-
-<p class="price">
-40 000 FCFA
-</p>
-
-<button class="btn btn-view"
-onclick="window.open('images/jpg3.jpg')">
-
-👁️ Voir
-
-</button>
-
-<button class="btn btn-cart"
-onclick="ajouterPanier('Costume Chic',40000)">
-
-🛒 Ajouter
-
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUIT 4 -->
-
-<div class="card">
-
-<img src="images/jpg4.jpg">
-
-<div class="card-content">
-
-<h3>Style Premium</h3>
-
-<p class="price">
-50 000 FCFA
-</p>
-
-<button class="btn btn-view"
-onclick="window.open('images/jpg4.jpg')">
-
-👁️ Voir
-
-</button>
-
-<button class="btn btn-cart"
-onclick="ajouterPanier('Style Premium',50000)">
-
-🛒 Ajouter
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PAGINATION -->
-
-<div class="pagination">
-
-<button onclick="prevPage()">
-⬅️ Précédent
-</button>
-
-<button onclick="nextPage()">
-Suivant ➡️
-</button>
-
-</div>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<h2 class="section-title">
-Contact
-</h2>
-
-<div class="contact-box">
-
-<p>
-📍 Dakar, Sénégal
-</p>
-
-<p>
-📞 +221 77 187 55 41
-</p>
-
-<iframe
-src="https://www.google.com/maps?q=Dakar&output=embed"
-width="100%"
-height="300"
-style="border:0;border-radius:20px;">
-</iframe>
-
-<br><br>
-
-<a href="https://wa.me/221771875541"
-target="_blank">
-
-<button class="btn btn-cart">
-
-Commander sur WhatsApp
-
-</button>
-
-</a>
-
-<div class="socials">
-
-<a href="https://snapchat.com/t/LG5y7Bfc"
-target="_blank">
-
-👻 Snapchat
-
-</a>
-
-<a href="https://www.tiktok.com/@kabacollection"
-target="_blank">
-
-🎵 TikTok
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-© 2026 KABA COUTURE — Tous droits réservés.
-
-</footer>
-
-<!-- JAVASCRIPT -->
-
-<script>
-
-let panier = [];
-
-let total = 0;
-
-/* AJOUTER PANIER */
-
-function ajouterPanier(nom,prix){
-
-panier.push({nom,prix});
-
-total += prix;
-
-document.getElementById("count").innerText =
-panier.length;
-
-afficherPanier();
-
-}
-
-/* AFFICHER PANIER */
-
-function afficherPanier(){
-
-let liste =
-document.getElementById("liste-panier");
-
-liste.innerHTML = "";
-
-panier.forEach(article => {
-
-let li =
-document.createElement("li");
-
-li.innerHTML =
-`${article.nom} - ${article.prix} FCFA`;
-
-liste.appendChild(li);
-
-});
-
-document.getElementById("total").innerText =
-total;
-
-}
-
-/* TOGGLE PANIER */
-
-function togglePanier(){
-
-let panierDiv =
-document.getElementById("panier");
-
-if(panierDiv.style.display=="block"){
-
-panierDiv.style.display="none";
-
-}else{
-
-panierDiv.style.display="block";
-
-}
-
-}
-
-/* WAVE */
-
-function payerWave(){
-
-if(total==0){
-
-alert("Votre panier est vide");
-
-return;
-
-}
-
-window.open(
-"https://pay.wave.com/m/M_ci4d5c18d35f_VB/"
-);
-
-}
-
-/* PAGINATION */
-
-const products =
-document.querySelectorAll(".card");
-
-let currentPage = 1;
-
-const productsPerPage = 10;
-
-function showPage(page){
-
-let start =
-(page - 1) * productsPerPage;
-
-let end =
-start + productsPerPage;
-
-products.forEach((product,index)=>{
-
-if(index >= start &&
-index < end){
-
-product.style.display = "block";
-
-}else{
-
-product.style.display = "none";
-
-}
-
-});
-
-}
-
-function nextPage(){
-
-if(currentPage * productsPerPage
-< products.length){
-
-currentPage++;
-
-showPage(currentPage);
-
-}
-
-}
-
-function prevPage(){
-
-if(currentPage > 1){
-
-currentPage--;
-
-showPage(currentPage);
-
-}
-
-}
-
-showPage(currentPage);
-
-</script>
+    <div class="dhl-bar">
+        Toutes vos livraisons en moins de 4 jours avec DHL
+    </div>
+
+    <header>
+        <div class="Logo">
+          <img src="images/logo.jpg" alt="Kaba Couture" style="height: 45px; width: auto; object-fit: contain;"> 
+        </div>
+
+
+        <div class="menu-btn">☰</div>
+        <div class="logo">>KABA COUTURE</div>
+        <div class="header-icons">
+            <span>🔍</span>
+            <span>👤</span>
+            <span style="position:relative;">🛒<small style="position:absolute; top:-5px; right:-8px; background:var(--primary-orange); color:white; border-radius:50%; padding:2px 5px; font-size:9px;">0</small></span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Bazin</h1>
+        <p>Découvrez notre collection de Bazin Getzner de haute qualité, sculptée pour votre élégance.</p>
+        <button class="btn-discover">Découvrir</button>
+    </section>
+
+    <div class="section-title">
+        <h2>Tendance du mois</h2>
+        <p>Découvrez ici les dernières créations</p>
+    </div>
+
+    <section class="product-grid" id="main-collection">
+        <div class="product-card">
+            <img src="images/jpg1.jpg" alt="Bazin Riche">
+            <div class="product-info">
+                <h3>Bazin Getzner Suprême</h3>
+                <p class="product-price">90 000 FCFA</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/jpg2.jpg" alt="Ensemble Kids">
+            <div class="product-info">
+                <h3>Ensemble Kids Signature</h3>
+                <p class="product-price">25 000 FCFA</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/jpg3.jpg" alt="Tenue Homme">
+            <div class="product-info">
+                <h3>Grand Boubou Moderne</h3>
+                <p class="product-price">65 000 FCFA</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/jpg4.jpg" alt="Accessoires">
+            <div class="product-info">
+                <h3>Sandales Cuir 6.9</h3>
+                <p class="product-price">15 000 FCFA</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/jpg5.jpg" alt="Produit">
+            <div class="product-info">
+                <h3>Chemise Lin Premium</h3>
+                <p class="product-price">30 000 FCFA</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/jpg6.jpg" alt="Produit">
+            <div class="product-info">
+                <h3>Veste Saharienne</h3>
+                <p class="product-price">45 000 FCFA</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-dark">
+        <div class="service-item">
+            <div class="service-icon">🚀</div>
+            <div class="service-text">
+                <h4>Livraison</h4>
+                <p>Partout dans le monde par DHL</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">💳</div>
+            <div class="service-text">
+                <h4>Moyen de paiement</h4>
+                <p>Wave, Orange Money, Carte Bancaire</p>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="service-icon">📞</div>
+            <div class="service-text">
+                <h4>Assistance Clientèle</h4>
+                <p>Disponible 24h/24 et 7j/7</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/221771875541" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30" alt="WA">
+    </a>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-link active">
+            <span>🏠</span>
+            Accueil
+        </a>
+        <a href="#menu" class="nav-link">
+            <span>☰</span>
+            Menu
+        </a>
+        <a href="#compte" class="nav-link">
+            <span>👤</span>
+            Compte
+        </a>
+        <a href="#panier" class="nav-link">
+            <span>🛒</span>
+            Panier
+        </a>
+    </nav>
 
 </body>
 </html>
