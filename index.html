@@ -246,6 +246,39 @@
                 text-align: center;
             }
         }
+        
+         .hero-slideshow-container {
+             position: relative;
+             width: 100%;
+             height: 400px; /* Ajuste la hauteur selon la taille de tes photos */
+             margin: 15px 0;
+             background-color: #fdfaf4; /* Même couleur que le fond pour une fusion parfaite */
+             display: flex;
+             justify-content: center;
+             align-items: center;
+        }
+
+         .hero-slide {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    /* 'contain' garantit que TOUTE l'image est visible sans être rognée */
+    object-fit: contain; 
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+        }
+
+         .hero-slide.active {
+         opacity: 1;
+        }
+
+                /* Sur mobile, on réduit un peu la hauteur */
+        , @media (max-width: 600px) {
+         .hero-slideshow-container {
+        height: 300px;
+             }
+        }
+             
     </style>
 </head>
 <body>
@@ -255,13 +288,13 @@
     </div>
 
     <header>
+
         <div class="Logo">
-          <img src="images/logo.jpg" alt="Kaba Couture" style="height: 45px; width: auto; object-fit: contain;"> 
+            <img src="images/logo.jpg" alt="Kaba Couture" style="height: 45px; width: auto; object-fit: contain;">
         </div>
 
-
         <div class="menu-btn">☰</div>
-        <div class="logo">>KABA COUTURE</div>
+        <div class="logo">KABA COUTURE</div>
         <div class="header-icons">
             <span>🔍</span>
             <span>👤</span>
@@ -269,11 +302,25 @@
         </div>
     </header>
 
-    <section class="hero">
-        <h1>Bazin</h1>
-        <p>Découvrez notre collection de Bazin Getzner de haute qualité, sculptée pour votre élégance.</p>
+    <section class="hero" style="background-color: #fdfaf4; padding: 20px;">
+    <div class="promo-text">
+        <h1>Nos Collections</h1>
+        <p>L'élégance signée Kaba Couture.</p>
+        
+        <div class="hero-slideshow-container">
+            <img src="images/jpg1.jpg" class="hero-slide active">
+            <img src="images/jpg2.jpg" class="hero-slide">
+            <img src="images/jpg3.jpg" class="hero-slide">
+            <img src="images/jpg4.jpg" class="hero-slide">
+            <img src="images/jpg5.jpg" class="hero-slide">
+            <img src="images/jpg6.jpg" class="hero-slide">
+            <img src="images/jpg7.jpg" class="hero-slide">
+            <img src="images/jpg8.jpg" class="hero-slide">
+        </div>
+
         <button class="btn-discover">Découvrir</button>
-    </section>
+    </div>
+</section>
 
     <div class="section-title">
         <h2>Tendance du mois</h2>
@@ -378,6 +425,25 @@
             Panier
         </a>
     </nav>
+
+    <script>
+    let heroIndex = 0;
+    const allHeroSlides = document.querySelectorAll('.hero-slide');
+
+    function startHeroSlider() {
+        // Cache l'image actuelle
+        allHeroSlides[heroIndex].classList.remove('active');
+        
+        // Passe à la suivante
+        heroIndex = (heroIndex + 1) % allHeroSlides.length;
+        
+        // Affiche la nouvelle
+        allHeroSlides[heroIndex].classList.add('active');
+    }
+
+    // Change toutes les 3000ms (3 secondes)
+    setInterval(startHeroSlider, 3000);
+</script>
 
 </body>
 </html>
