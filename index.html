@@ -1,1408 +1,699 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Élégance Couture</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>KABA COUTURE</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
-html{
-    scroll-behavior:smooth;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:Arial,sans-serif;
 }
 
 body{
-    font-family: Arial, sans-serif;
-    background:#f5f5f5;
-    color:#222;
+background:#f3f3f3;
+color:#111;
 }
 
-/* =========================
-   HERO
-========================= */
-.hero{
-    background:
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('images/logo.jpg') center/cover no-repeat;
+/* NAVBAR */
 
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-    padding:20px;
-}
-
-.hero h1{
-    font-size:70px;
-    margin-bottom:20px;
-    text-shadow:0 5px 15px rgba(0,0,0,0.5);
-}
-
-.hero p{
-    font-size:20px;
-    max-width:700px;
-    margin-bottom:30px;
-}
-
-.hero-btn a{
-    background:white;
-    color:black;
-    text-decoration:none;
-    padding:15px 35px;
-    border-radius:40px;
-    font-weight:bold;
-    transition:0.3s;
-    display:inline-block;
-}
-
-.hero-btn a:hover{
-    background:black;
-    color:white;
-    transform:translateY(-3px);
-}
-
-/* =========================
-   NAVBAR
-========================= */
 nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    background:black;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
+position:sticky;
+top:0;
+z-index:1000;
+background:black;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .logo{
-    color:white;
-    font-size:24px;
-    font-weight:bold;
+color:white;
+font-size:32px;
+font-weight:bold;
 }
 
 .nav-links{
-    display:flex;
-    gap:20px;
+display:flex;
+gap:25px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
 }
 
-nav a:hover{
-    color:#d4af37;
+.nav-links a:hover{
+color:#d4af37;
 }
 
-/* =========================
-   PANIER
-========================= */
 .cart{
-    color:white;
-    cursor:pointer;
-    font-size:18px;
-    font-weight:bold;
+color:white;
+font-size:22px;
+cursor:pointer;
 }
 
-#panier{
-    display:none;
-    background:white;
-    padding:25px;
-    margin:20px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url('images/logo.jpg');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
 }
 
-#liste-panier li{
-    margin-bottom:10px;
+.hero-content h1{
+font-size:90px;
+margin-bottom:20px;
 }
 
-/* =========================
-   SECTION
-========================= */
-.section{
-    padding:80px 30px;
+.hero-content p{
+font-size:25px;
+margin-bottom:35px;
 }
+
+.hero-btn{
+display:inline-block;
+padding:16px 35px;
+background:white;
+color:black;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+background:#d4af37;
+color:white;
+}
+
+/* SECTION */
 
 .section-title{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:50px;
-    color:black;
+text-align:center;
+font-size:45px;
+margin:60px 0 30px;
 }
 
-/* =========================
-   SERVICES
-========================= */
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-    gap:25px;
-}
+/* GRID */
 
-.service-card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
-    transition:0.3s;
-}
-
-.service-card:hover{
-    transform:translateY(-10px);
-}
-
-.service-card h3{
-    margin-bottom:15px;
-    color:#111;
-}
-
-/* =========================
-   COLLECTION
-========================= */
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+padding:40px;
 }
+
+/* CARD */
 
 .card{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
-    transition:0.3s;
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+transform:translateY(-10px);
 }
 
 .card img{
-    width:100%;
-    height:420px;
-    object-fit:cover;
-    transition:0.5s;
-}
-
-.card:hover img{
-    transform:scale(1.05);
+width:100%;
+height:700px;
+object-fit:cover;
 }
 
 .card-content{
-    padding:20px;
-    text-align:center;
+padding:25px;
+text-align:center;
+}
+
+.card-content h3{
+font-size:32px;
+margin-bottom:15px;
 }
 
 .price{
-    font-size:22px;
-    font-weight:bold;
-    margin:15px 0;
+font-size:28px;
+font-weight:bold;
+color:#d4af37;
+margin-bottom:20px;
 }
 
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
+
 .btn{
-    background:black;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:30px;
-    cursor:pointer;
-    font-weight:bold;
-    transition:0.3s;
+border:none;
+padding:14px 25px;
+border-radius:50px;
+font-weight:bold;
+cursor:pointer;
+margin:5px;
+transition:0.3s;
+}
+
+.btn-view{
+background:#eee;
+}
+
+.btn-cart{
+background:black;
+color:white;
 }
 
 .btn:hover{
-    background:#d4af37;
-    color:black;
+transform:scale(1.05);
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* PANIER */
+
+#panier{
+position:fixed;
+right:20px;
+top:90px;
+background:white;
+width:320px;
+padding:20px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+display:none;
+z-index:2000;
+}
+
+#liste-panier li{
+margin:10px 0;
+}
+
+#waveBtn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+background:#00bfff;
+color:white;
+font-size:18px;
+margin-top:20px;
+cursor:pointer;
+}
+
+/* PAGINATION */
+
+.pagination{
+text-align:center;
+margin:40px;
+}
+
+.pagination button{
+padding:15px 30px;
+border:none;
+border-radius:40px;
+background:black;
+color:white;
+cursor:pointer;
+margin:10px;
+font-size:18px;
+}
+
+/* CONTACT */
+
 .contact-box{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    max-width:900px;
-    margin:auto;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+background:white;
+margin:40px;
+padding:40px;
+border-radius:25px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.contact-box p{
+font-size:20px;
+margin-bottom:20px;
 }
 
 .socials{
-    margin-top:20px;
+margin-top:20px;
 }
 
 .socials a{
-    display:inline-block;
-    margin:10px;
-    text-decoration:none;
-    color:black;
-    font-weight:bold;
+display:inline-block;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+color:black;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
+
 footer{
-    background:black;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:50px;
+background:black;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:50px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media(max-width:768px){
+/* RESPONSIVE */
 
-    .hero h1{
-        font-size:45px;
-    }
+@media(max-width:900px){
 
-    .hero p{
-        font-size:16px;
-    }
-
-    nav{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .card img{
-        height:320px;
-    }
+.grid{
+grid-template-columns:1fr;
 }
+
+.card img{
+height:500px;
+}
+
+.hero-content h1{
+font-size:50px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 
-    <!-- =========================
-     NAVBAR
-========================= -->
 <nav>
 
-    <div class="logo">
-        KABA COUTURE
-    </div>
+<div class="logo">
+KABA COUTURE
+</div>
 
-    <div class="nav-links">
-        <a href="#">Accueil</a>
-        <a href="#services">Services</a>
-        <a href="#collection">Collection</a>
-        <a href="#contact">Contact</a>
-    </div>
+<div class="nav-links">
 
-    <div class="cart" onclick="togglePanier()">
-        🛒 <span id="count">0</span>
-    </div>
+<a href="#">Accueil</a>
 
-</nav>
+<a href="#collection">
+Collection
+</a>
 
-<!-- =========================
-     HERO
-========================= -->
-<header class="hero">
-
-    <h1></h1>
-
-    <p>
-    
-    </p>
-
-    <div class="hero-btn">
-        <a href="#collection">Voir nos produits ↓</a>
-    </div>
-
-</header>
-
-
-
-<!-- =========================
-     PANIER
-========================= -->
-<div id="panier">
-
-    <h2>🛒 Votre Panier</h2>
-
-    <ul id="liste-panier"></ul>
-
-    <h3 style="margin-top:20px;">
-        Total : <span id="total">0</span> FCFA
-    </h3>
-
-    <br>
-
-    <button class="btn" onclick="payerWave()">
-        💰 Payer avec Wave
-    </button>
+<a href="#contact">
+Contact
+</a>
 
 </div>
 
-<!-- =========================
-     SERVICES
-========================= -->
-<section class="section" id="services">
+<div class="cart"
+onclick="togglePanier()">
 
-    <h2 class="section-title">Nos Services</h2>
+🛒 <span id="count">0</span>
 
-    <div class="services-grid">
+</div>
 
-        <div class="service-card">
-            <h3>Costume sur mesure</h3>
-            <p>
-                Ici nous vendons des tenues traditionnelles modernes; des créations uniques adaptées à votre style et votre personnalité.
-            </p>
-        </div>
+</nav>
 
-        <div class="service-card">
-            <h3>Retouches professionnelles</h3>
-            <p>
-                Un ajustement parfait pour tous vos vêtements.
-            </p>
-        </div>
+<!-- HERO -->
 
-    </div>
+<header class="hero">
+
+<div class="hero-content">
+
+<h1>KABA COUTURE</h1>
+
+<p>
+Les meilleures tenues africaines modernes et élégantes
+</p>
+
+<a href="#collection"
+class="hero-btn">
+
+Voir nos produits ↓
+
+</a>
+
+</div>
+
+</header>
+
+<!-- PANIER -->
+
+<div id="panier">
+
+<h2>🛒 Mon Panier</h2>
+
+<ul id="liste-panier"></ul>
+
+<h3>
+Total :
+<span id="total">0</span>
+FCFA
+</h3>
+
+<button id="waveBtn"
+onclick="payerWave()">
+
+💳 Payer avec Wave
+
+</button>
+
+</div>
+
+<!-- COLLECTION -->
+
+<section id="collection">
+
+<h2 class="section-title">
+Notre Collection
+</h2>
+
+<div class="grid">
+
+<!-- PRODUIT 1 -->
+
+<div class="card">
+
+<img src="images/jpg1.jpg">
+
+<div class="card-content">
+
+<h3>Fashion Dakar</h3>
+
+<p class="price">
+25 000 FCFA
+</p>
+
+<button class="btn btn-view"
+onclick="window.open('images/jpg1.jpg')">
+
+👁️ Voir
+
+</button>
+
+<button class="btn btn-cart"
+onclick="ajouterPanier('Fashion Dakar',25000)">
+
+🛒 Ajouter
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUIT 2 -->
+
+<div class="card">
+
+<img src="images/jpg2.jpg">
+
+<div class="card-content">
+
+<h3>Collection Luxe</h3>
+
+<p class="price">
+30 000 FCFA
+</p>
+
+<button class="btn btn-view"
+onclick="window.open('images/jpg2.jpg')">
+
+👁️ Voir
+
+</button>
+
+<button class="btn btn-cart"
+onclick="ajouterPanier('Collection Luxe',30000)">
+
+🛒 Ajouter
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUIT 3 -->
+
+<div class="card">
+
+<img src="images/jpg3.jpg">
+
+<div class="card-content">
+
+<h3>Costume Chic</h3>
+
+<p class="price">
+40 000 FCFA
+</p>
+
+<button class="btn btn-view"
+onclick="window.open('images/jpg3.jpg')">
+
+👁️ Voir
+
+</button>
+
+<button class="btn btn-cart"
+onclick="ajouterPanier('Costume Chic',40000)">
+
+🛒 Ajouter
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUIT 4 -->
+
+<div class="card">
+
+<img src="images/jpg4.jpg">
+
+<div class="card-content">
+
+<h3>Style Premium</h3>
+
+<p class="price">
+50 000 FCFA
+</p>
+
+<button class="btn btn-view"
+onclick="window.open('images/jpg4.jpg')">
+
+👁️ Voir
+
+</button>
+
+<button class="btn btn-cart"
+onclick="ajouterPanier('Style Premium',50000)">
+
+🛒 Ajouter
+
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-<!-- =========================
-     COLLECTION
-========================= -->
-<section class="section" id="collection">
+<!-- PAGINATION -->
 
-    <h2 class="section-title">Notre Collection</h2>
-
-    <div class="grid">
-
-        <!-- PRODUIT 1 -->
-        <div class="card">
-            <img src="images/jpg1.jpg" alt="Costume 1">
-
-            <div class="card-content">
-                <h3>Costume Élégant</h3>
-                <p class="price">25 000 FCFA</p>
-                
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg1.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Costume Élégant', 25000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <!-- PRODUIT 2 -->
-        <div class="card">
-            <img src="images/jpg2.jpg" alt="Costume 2">
-
-            <div class="card-content">
-                <h3>Costume Premium</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg2.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Costume Premium', 25000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <!-- PRODUIT 3 -->
-        <div class="card">
-            <img src="images/jpg3.jpg" alt="Costume 3">
-            <div class="card-content">
-                <h3>Style Moderne</h3>
-                <p class="price">25 000 FCFA</p>
-                 
-                 <button class="btn"
-                   onclick="window.open('images/jpg3.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Style Moderne', 25000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <!-- PRODUIT 4 -->
-        <div class="card">
-            <img src="images/jpg4.jpg" alt="Costume 4">
-
-            <div class="card-content">
-                <h3>Collection Luxe</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg4.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Collection Luxe', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <!-- PRODUIT 5 -->
-        <div class="card">
-            <img src="images/jpg5.jpg" alt="Costume 5">
-
-            <div class="card-content">
-                <h3>Costume Chic</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg5.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Costume Chic', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <!-- PRODUIT 6 -->
-        <div class="card">
-            <img src="images/jpg6.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg6.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg7.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg7.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg8.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg8.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-       <div class="card">
-            <img src="images/jpg9.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg9.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-        
-        <div class="card">
-            <img src="images/jpg10.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg10.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg11.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg11.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-       <div class="card">
-            <img src="images/jpg12.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg12.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div> 
-
-        <div class="card">
-            <img src="images/jpg13.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg13.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg14.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg14.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg15.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg15.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg16.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg16.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg17.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg17.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg18.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg18.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg19.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg19.jpg')">
-                    👁️ Voir
-                 </button> 
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg20.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg20.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg21.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg21.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg22.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">25 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg22.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg23.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">30 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg23.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg24.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">30 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg24.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg25.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">30 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg25.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg26.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">30 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg26.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg27.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">30 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg28.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">40 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg29.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">50 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg32.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">50 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg33.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">35 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg34.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">35 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg35.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">30 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg36.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">30 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-       <div class="card">
-            <img src="images/jpg37.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">30 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-        
-        <div class="card">
-            <img src="images/jpg38.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">30 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg39.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">30 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg40.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg41.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg42.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg43.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg44.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg45.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg46.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-       <div class="card">
-            <img src="images/jpg47.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-        
-        <div class="card">
-            <img src="images/jpg48.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg49.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/jpg50.jpg" alt="Costume 6">
-
-            <div class="card-content">
-                <h3>Fashion Dakar</h3>
-                <p class="price">15 000 FCFA</p>
-
-                 <button class="btn"
-                   onclick="window.open('images/jpg27.jpg')">
-                    👁️ Voir
-                 </button>
-
-                <button class="btn"
-                    onclick="ajouterPanier('Fashion Dakar', 30000)">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
-
-    </div>
-
-   </div> <!-- fin des produits -->
-
-<!-- 👇 ICI -->
 <div class="pagination">
 
-    <button onclick="prevPage()">
-        ⬅️ Précédent
-    </button>
+<button onclick="prevPage()">
+⬅️ Précédent
+</button>
 
-    <button onclick="nextPage()">
-        Suivant ➡️
-    </button>
+<button onclick="nextPage()">
+Suivant ➡️
+</button>
 
-</div> 
+</div>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">
+Contact
+</h2>
+
+<div class="contact-box">
+
+<p>
+📍 Dakar, Sénégal
+</p>
+
+<p>
+📞 +221 77 187 55 41
+</p>
+
+<iframe
+src="https://www.google.com/maps?q=Dakar&output=embed"
+width="100%"
+height="300"
+style="border:0;border-radius:20px;">
+</iframe>
+
+<br><br>
+
+<a href="https://wa.me/221771875541"
+target="_blank">
+
+<button class="btn btn-cart">
+
+Commander sur WhatsApp
+
+</button>
+
+</a>
+
+<div class="socials">
+
+<a href="https://snapchat.com/t/LG5y7Bfc"
+target="_blank">
+
+👻 Snapchat
+
+</a>
+
+<a href="https://www.tiktok.com/@kabacollection"
+target="_blank">
+
+🎵 TikTok
+
+</a>
+
+</div>
+
+</div>
 
 </section>
 
-<!-- =========================
-     CONTACT
-========================= -->
-<section class="section" id="contact">
+<!-- FOOTER -->
 
-    <h2 class="section-title">Contact</h2>
-
-    <div class="contact-box">
-
-        <p><strong>📍 Adresse :</strong> Dakar, Sénégal</p>
-
-        <br>
-
-        <p><strong>📞 Téléphone :</strong> +221 77 187 55 41</p>
-
-        <br>
-
-        <iframe
-            src="https://www.google.com/maps?q=Dakar&output=embed"
-            width="100%"
-            height="300"
-            style="border:0; border-radius:15px;">
-        </iframe>
-
-        <br><br>
-
-        <a href="https://wa.me/221771875541" target="_blank">
-            <button class="btn">
-                Commander sur WhatsApp
-            </button>
-        </a>
-
-        <div class="socials">
-
-            <h3>Suivez-nous</h3>
-
-            <br>
-
-            <a href="https://snapchat.com/t/LG5y7Bfc" target="_blank">
-                👻 Snapchat
-            </a>
-
-            <a href="https://www.tiktok.com/@kabacollection?_r=1&_t=ZS-966q5Skk2K4"
-               target="_blank">
-                🎵 TikTok
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- =========================
-     FOOTER
-========================= -->
 <footer>
-    <p>© 2026 Élégance Couture — Tous droits réservés.</p>
+
+© 2026 KABA COUTURE — Tous droits réservés.
+
 </footer>
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+<!-- JAVASCRIPT -->
+
 <script>
+
+let panier = [];
+
+let total = 0;
+
+/* AJOUTER PANIER */
+
+function ajouterPanier(nom,prix){
+
+panier.push({nom,prix});
+
+total += prix;
+
+document.getElementById("count").innerText =
+panier.length;
+
+afficherPanier();
+
+}
+
+/* AFFICHER PANIER */
+
+function afficherPanier(){
+
+let liste =
+document.getElementById("liste-panier");
+
+liste.innerHTML = "";
+
+panier.forEach(article => {
+
+let li =
+document.createElement("li");
+
+li.innerHTML =
+`${article.nom} - ${article.prix} FCFA`;
+
+liste.appendChild(li);
+
+});
+
+document.getElementById("total").innerText =
+total;
+
+}
+
+/* TOGGLE PANIER */
+
+function togglePanier(){
+
+let panierDiv =
+document.getElementById("panier");
+
+if(panierDiv.style.display=="block"){
+
+panierDiv.style.display="none";
+
+}else{
+
+panierDiv.style.display="block";
+
+}
+
+}
+
+/* WAVE */
+
+function payerWave(){
+
+if(total==0){
+
+alert("Votre panier est vide");
+
+return;
+
+}
+
+window.open(
+"https://pay.wave.com/m/M_ci4d5c18d35f_VB/"
+);
+
+}
+
+/* PAGINATION */
 
 const products =
 document.querySelectorAll(".card");
@@ -1421,13 +712,15 @@ start + productsPerPage;
 
 products.forEach((product,index)=>{
 
-if(index >= start && index < end){
+if(index >= start &&
+index < end){
 
 product.style.display = "block";
 
 }else{
 
 product.style.display = "none";
+
 }
 
 });
@@ -1459,51 +752,7 @@ showPage(currentPage);
 
 }
 
-showPage(currentPage);    
-
-
-function afficherPanier(){
-
-    const liste = document.getElementById("liste-panier");
-
-    liste.innerHTML = "";
-
-    panier.forEach((article) => {
-
-        let li = document.createElement("li");
-
-        li.innerHTML = `
-            ${article.nom} - ${article.prix} FCFA
-        `;
-
-        liste.appendChild(li);
-    });
-
-    document.getElementById("total").innerText = total;
-}
-
-function togglePanier(){
-
-    const panierDiv = document.getElementById("panier");
-
-    if(panierDiv.style.display === "block"){
-        panierDiv.style.display = "none";
-    }else{
-        panierDiv.style.display = "block";
-    }
-}
-
-function payerWave(){
-
-    if(total === 0){
-
-        alert("Votre panier est vide.");
-
-        return;
-    }
-
-    alert("Paiement Wave bientôt disponible !");
-}
+showPage(currentPage);
 
 </script>
 
