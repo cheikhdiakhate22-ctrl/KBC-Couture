@@ -452,80 +452,6 @@ header{
     }
 }
 
-/* Sidebar du Panier */
-.panier-slide {
-    position: fixed;
-    top: 0;
-    right: -400px; /* Caché par défaut */
-    width: 350px;
-    height: 100%;
-    background-color: #f9f9f9; /* Gris très clair comme sur la photo */
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    transition: 0.4s ease;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-}
-
-/* Titre et bouton fermer */
-.panier-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.panier-header h2 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #222;
-}
-
-.close-panier {
-    font-size: 28px;
-    cursor: pointer;
-    color: #666;
-}
-
-/* Contenu de la liste */
-.panier-content {
-    flex-grow: 1;
-}
-
-#liste-panier {
-    list-style: none;
-    padding: 0;
-    font-size: 18px;
-    color: #444;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
-
-/* Section Total */
-.total-container {
-    font-size: 22px;
-    color: #1e2129;
-    margin-bottom: 20px;
-}
-
-.total-container strong {
-    font-weight: 800;
-}
-
-/* Bouton d'action */
-.btn-commander {
-    width: 100%;
-    background-color: #000;
-    color: #fff;
-    padding: 15px;
-    border: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 4px;
-}
 
 /* Section Paiement dans la caisse */
 .payment-methods {
@@ -586,6 +512,8 @@ header{
     cursor: pointer;
     border-radius: 4px;
 }
+
+
 </style>
 </head>
 
@@ -609,10 +537,9 @@ header{
     <div class="header-icons">
         <span>🔍</span>
         <span>👤</span>
-        <span onclick="ouvrirPanier()">🛒</span>
-     </div>
+        <span onclick="ouvrirPanier()"> 🛒</span>
 
-     <!-- LA CAISSE (SIDEBAR PANIER) -->
+    <!-- LA CAISSE (SIDEBAR PANIER) -->
 <div id="panier-slide-element" class="panier-slide">
     <div class="panier-header">
         <h2>Votre Panier</h2>
@@ -628,15 +555,7 @@ header{
 
     <div class="panier-footer">
         <div class="total-container">
-            <strong>Total : <span id="total-prix">25000</span> FCFA</strong>
-        </div>
-        <button class="btn-commander">Passer la commande</button>
-    </div>
-
-    <div class="panier-footer">
-    <div class="total-container">
-        <strong>Total : <span id="total-prix">25000</span> FCFA</strong>
-    </div>
+            
 
     <div class="payment-methods">
         <p>Payer par :</p>
@@ -655,9 +574,13 @@ header{
         </div>
     </div>
 
-    <button class="btn-commander">Valider la commande</button>
+    <button class="btn-commander"> Valider la commande</button>
 </div>
 </div>
+
+    </div>
+</div>
+ 
 </header>
 
 <section class="hero">
