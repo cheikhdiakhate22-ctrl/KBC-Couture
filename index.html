@@ -527,6 +527,65 @@ header{
     border-radius: 4px;
 }
 
+/* Section Paiement dans la caisse */
+.payment-methods {
+    margin: 20px 0;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.payment-methods p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.pay-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.pay-btn img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+    object-fit: contain;
+}
+
+/* Couleurs au survol */
+.pay-btn.wave:hover { border-color: #1dcaff; background: #f0faff; }
+.pay-btn.om:hover { border-color: #ff6600; background: #fff5ee; }
+
+.btn-commander {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+}
 </style>
 </head>
 
@@ -573,6 +632,31 @@ header{
         </div>
         <button class="btn-commander">Passer la commande</button>
     </div>
+
+    <div class="panier-footer">
+    <div class="total-container">
+        <strong>Total : <span id="total-prix">25000</span> FCFA</strong>
+    </div>
+
+    <div class="payment-methods">
+        <p>Payer par :</p>
+        <div class="payment-grid">
+            <!-- Bouton Wave -->
+            <a href="wave://pay:771875541" class="pay-btn wave">
+                <img src="images/Logo.jpg1.jpg" alt="Logo">
+                Wave
+            </a>
+            
+            <!-- Bouton Orange Money -->
+            <a href="#" class="pay-btn om">
+                <img src="images/Logo.jpg2.jpg" alt="Logo">
+                OM
+            </a>
+        </div>
+    </div>
+
+    <button class="btn-commander">Valider la commande</button>
+</div>
 </div>
 </header>
 
