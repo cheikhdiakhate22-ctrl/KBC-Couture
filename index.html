@@ -781,7 +781,7 @@ hu
             <!-- ORANGE MONEY -->
 
             <a id="om-link"
-            href="maxit://payment?amount=${total}&mobile=221771875541"
+            href="orangemoney://payment?amount=${total}&mobile=221771875541"
             class="payment-card">
 
                 <img src="images/Logo.jpg2.jpg">
@@ -1660,6 +1660,14 @@ function fermerPaiement(){
     .style.display = "none";
 
 }
+
+document.getElementById("wave-link")
+.href =
+`wave://payment?amount=${total}&mobile=221771875541`;
+
+document.getElementById("om-link")
+.href =
+`orangemoney://payment?amount=${total}&mobile=221771875541`;
 
 </script>
 
