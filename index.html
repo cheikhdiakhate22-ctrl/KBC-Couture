@@ -452,65 +452,216 @@ header{
     }
 }
 
+/* ========================= */
+/* NOUVEAU PANIER 6POINT9 */
+/* ========================= */
 
-/* Section Paiement dans la caisse */
-.payment-methods {
-    margin: 20px 0;
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
+.panier-slide{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:100%;
+    height:100vh;
+    background:#f5f5f5;
+    z-index:99999;
+    overflow-y:auto;
+    transition:0.5s;
 }
 
-.payment-methods p {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #555;
+/* BANNIERE NOIRE */
+
+.cart-hero-black{
+    background:black;
+    color:white;
+    padding:40px 20px;
 }
 
-.payment-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 15px;
+.cart-breadcrumb{
+    text-align:center;
+    color:#bbb;
+    font-size:18px;
+    margin-bottom:40px;
 }
 
-.pay-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: bold;
-    color: #333;
-    background: #fff;
-    transition: 0.3s;
+.cart-hero-black h1{
+    text-align:center;
+    font-size:65px;
+    margin-bottom:50px;
 }
 
-.pay-btn img {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 5px;
-    object-fit: contain;
+/* LIGNE */
+
+.cart-top-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
 }
 
-/* Couleurs au survol */
-.pay-btn.wave:hover { border-color: #1dcaff; background: #f0faff; }
-.pay-btn.om:hover { border-color: #ff6600; background: #fff5ee; }
+.cart-top-row h2{
+    font-size:40px;
+}
 
-.btn-commander {
-    width: 100%;
-    background-color: #000;
-    color: #fff;
-    padding: 15px;
-    border: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 4px;
+/* BOUTON */
+
+.continue-shopping{
+    border:2px solid #f26522;
+    background:transparent;
+    color:#f26522;
+    padding:18px 30px;
+    border-radius:15px;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* CONTENU */
+
+.cart-content{
+    padding:30px 20px;
+}
+
+/* PANIER VIDE */
+
+.empty-cart-message{
+    background:#f9e5ea;
+    border:2px solid #efb5c4;
+    color:#d64174;
+    padding:45px;
+    border-radius:20px;
+    text-align:center;
+    font-size:40px;
+    margin-top:20px;
+}
+
+/* PRODUITS */
+
+.panier-item{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.panier-item button{
+    background:red;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* TOTAL */
+
+.total{
+    margin-top:30px;
+    font-size:35px;
+    font-weight:bold;
+    text-align:right;
+}
+
+/* ========================= */
+/* CHECKOUT */
+/* ========================= */
+
+.checkout-box{
+    margin-top:30px;
+}
+
+.checkout-btn{
+    width:100%;
+    background:black;
+    color:white;
+    border:none;
+    padding:22px;
+    font-size:24px;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+/* POPUP */
+
+.payment-popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:999999;
+}
+
+.payment-content{
+    width:90%;
+    max-width:500px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:25px;
+}
+
+.payment-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.payment-header h2{
+    font-size:35px;
+}
+
+.payment-header button{
+    background:none;
+    border:none;
+    font-size:35px;
+    cursor:pointer;
+}
+
+.payment-total{
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.payment-methods{
+    display:flex;
+    gap:20px;
+}
+
+.payment-card{
+    flex:1;
+
+    background:#f5f5f5;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:black;
+}
+
+.payment-card img{
+    width:90px;
+    height:60px;
+    object-fit:contain;
+    margin-bottom:10px;
 }
 
 
@@ -534,56 +685,126 @@ header{
         <div class="logo-text">KABA COUTURE</div>
     </div>
 
-    <div class="header-icons">
-        <span>🔍</span>
-        <span>👤</span>
-        <span onclick="ouvrirPanier()"> 🛒</span>
+   <!-- ========================= -->
+<!-- PANIER STYLE 6POINT9 -->
+<!-- ========================= -->
 
-    <!-- LA CAISSE (SIDEBAR PANIER) -->
-<div id="panier-slide-element" class="panier-slide">
-    <div class="panier-header">
-        <h2>Votre Panier</h2>
-        <span class="close-panier" onclick="fermerPanier()">×</span>
-    </div>
+<div id="panier-slide" class="panier-slide">
 
-    <div class="panier-content">
-        <!-- Cet élément sera rempli par le JavaScript -->
-        <ul id="liste-panier">
-            <li class="panier-item">Tenue traditionnelle - 25000 FCFA</li>
-        </ul>
-    </div>
+    <!-- Bannière noire -->
 
-    <div class="panier-footer">
-        <div class="total-container">
-            
+    <div class="cart-hero-black">
 
-    <div class="payment-methods">
-        <p>Payer par :</p>
-        <div class="payment-grid">
-            <!-- Bouton Wave -->
-            <a href="wave://pay:771875541" class="pay-btn wave">
-                <img src="images/Logo.jpg1.jpg" alt="Logo">
-                Wave
-            </a>
-            
-            <!-- Bouton Orange Money -->
-            <a href="oranemoney://pay:771875541" class="pay-btn om">
-                <img src="images/Logo.jpg2.jpg" alt="Logo">
-                OM
-            </a>
+        <div class="cart-breadcrumb">
+            🏠 Home > Shop > Panier
         </div>
+
+        <h1>Panier</h1>
+
+        <div class="cart-top-row">
+
+            <h2>Produit</h2>
+
+            <button class="continue-shopping"
+            onclick="fermerPanier()">
+                ← Poursuivre vos achats
+            </button>
+
+        </div>
+
     </div>
 
-    <button class="btn-commander"> Valider la commande</button>
+    <!-- Produits -->
+
+    <div class="cart-content">
+
+        <ul id="liste-panier"></ul>
+
+        <div class="empty-cart-message"
+        id="empty-cart">
+            Le panier est vide
+        </div>
+
+        <div class="total">
+            Total : <span id="total">0</span> FCFA
+        </div>
+
+        <!-- FINALISATION -->
+
+<div class="checkout-box">
+
+    <button class="checkout-btn"
+    onclick="ouvrirPaiement()">
+        Finaliser la commande
+    </button>
+
 </div>
+
+<!-- POPUP PAIEMENT -->
+
+<div id="payment-popup" class="payment-popup">
+
+    <div class="payment-content">
+
+        <div class="payment-header">
+
+            <h2>Paiement</h2>
+
+            <button onclick="fermerPaiement()">
+                ×
+            </button>
+
+        </div>
+
+        <div class="payment-total">
+            Montant à payer :
+            <span id="montant-final">
+                0
+            </span>
+            FCFA
+        </div>
+
+        <div class="payment-methods">
+
+            <!-- WAVE -->
+
+            <a id="wave-link"
+            href="wave://pay:771875541"
+            class="payment-card">
+
+                <img src="images/Logo.jpg1.jpg">
+
+                <span>Wave</span>
+
+            </a>
+
+            <!-- ORANGE MONEY -->
+
+            <a id="om-link"
+            href="#144#://pay:771875541"
+            class="payment-card">
+
+                <img src="images/Logo.jpg2.jpg">
+
+                <span>Orange Money</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
 </div>
 
     </div>
+
 </div>
  
 </header>
 
-<section class="hero">
+
+
+<div class="hero">
 
     <h1>Nos Collections</h1>
 
@@ -1283,64 +1504,161 @@ class="whatsapp-float">
 
 <script>
 
-/* ===================== */
-/* SLIDER */
-/* ===================== */
+/* ========================= */
+/* HERO SLIDER */
+/* ========================= */
 
 let heroIndex = 0;
 
-const slides = document.querySelectorAll('.hero-slide');
+const slides =
+document.querySelectorAll('.hero-slide');
 
 function startHeroSlider(){
 
     slides[heroIndex].classList.remove('active');
 
-    heroIndex = (heroIndex + 1) % slides.length;
+    heroIndex =
+    (heroIndex + 1) % slides.length;
 
     slides[heroIndex].classList.add('active');
+
 }
 
 setInterval(startHeroSlider,3000);
 
-/* ===================== */
+/* ========================= */
 /* PANIER */
-/* ===================== */
+/* ========================= */
 
+let panier = [];
 let total = 0;
 
+/* OUVRIR */
+
 function ouvrirPanier(){
+
     document.getElementById("panier-slide").style.right = "0";
+
 }
 
+/* FERMER */
+
 function fermerPanier(){
-    document.getElementById("panier-slide").style.right = "-400px";
+
+    document.getElementById("panier-slide").style.right = "-100%";
+
 }
+
+/* AJOUTER */
 
 function ajouterPanier(nom,prix){
 
-    const liste = document.getElementById("liste-panier");
+    panier.push({
+        nom,
+        prix
+    });
 
-    const item = document.createElement("li");
+    afficherPanier();
 
-    item.classList.add("panier-item");
+    ouvrirPanier();
 
-    item.innerHTML = `
-        ${nom} - ${prix} FCFA
-    `;
-
-    liste.appendChild(item);
-
-    total += prix;
-
-    document.getElementById("total").innerText = total;
 }
 
-function ouvrirPanier() {
-    document.getElementById("panier-slide-element").style.right = "0";
+/* AFFICHER */
+
+function afficherPanier(){
+
+    const liste =
+    document.getElementById("liste-panier");
+
+    const totalElement =
+    document.getElementById("total");
+
+    const empty =
+    document.getElementById("empty-cart");
+
+    liste.innerHTML = "";
+
+    total = 0;
+
+    if(panier.length === 0){
+
+        empty.style.display = "block";
+
+    }else{
+
+        empty.style.display = "none";
+
+    }
+
+    panier.forEach((item,index)=>{
+
+        total += item.prix;
+
+        liste.innerHTML += `
+
+        <li class="panier-item">
+
+            <div>
+                <h3>${item.nom}</h3>
+                <p>${item.prix} FCFA</p>
+            </div>
+
+            <button onclick="supprimerProduit(${index})">
+                Supprimer
+            </button>
+
+        </li>
+
+        `;
+
+    });
+
+    totalElement.innerText = total;
+
 }
 
-function fermerPanier() {
-    document.getElementById("panier-slide-element").style.right = "-400px";
+/* SUPPRIMER */
+
+function supprimerProduit(index){
+
+    panier.splice(index,1);
+
+    afficherPanier();
+
+}
+
+/* ========================= */
+/* PAIEMENT */
+/* ========================= */
+
+function ouvrirPaiement(){
+
+    document.getElementById("payment-popup")
+    .style.display = "flex";
+
+    document.getElementById("montant-final")
+    .innerText = total;
+
+    /* LIENS */
+
+    document.getElementById("wave-link")
+    .href =
+    `wave://pay?amount=${total}&recipient=771875541`;
+
+    document.getElementById("om-link")
+    .href =
+    `orangemoney://pay?amount=${total}&recipient=771875541`;
+
+}
+
+/* ========================= */
+
+function fermerPaiement(){
+
+    document.getElementById("payment-popup")
+    .style.display = "none";
+
 }
 
 </script>
